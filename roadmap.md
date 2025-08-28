@@ -19,6 +19,7 @@
 ## Basic
 - Linux
 - Git and Github
+- Containers
 - Distributed System and Networking basic
 
 ### Understanding Data Source
@@ -44,17 +45,37 @@
 
 ### Data Storage
 1. Relational Database: postgres, mysql, MSSQL
-- need and use
-- transition
+- features of relational database
+    - model data as relation and entity
+    - primary, foreign key and cascade
+    - transition
+    - ACID
 - DDL statements
 - select
-    - order of select
+    - basic select, manipulate select output like concat two columns, use function like uppercase
+    - using case, nullif, coalesce
     - order and limit
-    - group and window function
-    - joins
-    - cte
+    - aggregate queries: sum, count, avg, min, max, group by, having
+    - join queries: inner, left, right, full, self cross
     - subquery
+    - join vs subquery
+- Advance queries
+    - advanced function: 
+        - floor, abs, mod, round, ceiling
+        - string: concat, length, substring, replace, upper, lower
+        - date: date, time, timestamp, datepart, dateadd
+    - CTE
+    - CTE vs subquery vs join
+    - windows functions
+- Stored Procedures
+- View and Material views
+- Performance Optimization
+    - Indexes
+    - Query analysis techniques
 2. Column Database: Cassandra
+- Need for column database
+- relational vs column database
+- distributed database
 3. No Sql database: 
 4. Data Lakes
 5. Vector Database
