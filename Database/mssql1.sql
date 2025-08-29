@@ -44,4 +44,32 @@ CREATE TABLE Student_marks (
 
 SELECT * FROM Student;
 
+Select id, Fname, Lname From Student ORDER BY id  OFFSET 5 ROWS FETCH NEXT 10 ROWS ONLY;
+
+Select id, Fname, Lname, Fname+' '+Lname as FullName from Student WHERE FullName='David Herring' ORDER by FullName OFFSET 10 ROWS FETCH NEXT 10 ROWS ONLY;
+
+Select * from Student_marks;
+
+SELECT MIN(Marks) AS Min_marks, MAX(Marks) AS Max_marks, AVG(Marks) AS Average, SUM(marks) AS Sum, COUNT(marks) AS Count FROM Student_marks;
+
+select Subject_id, Student_id from Student_marks group by Subject_id, Student_id;
+
+SELECT Student_id, MIN(Marks), MAX(Marks) from Student_marks group by Student_id;
+
+SELECT Subject_id, COUNT(*) as num from Student_marks group by Subject_id HAVING COUNT(*)>250;
+
+SELECT DISTINCT 
+    S.Fname, 
+    S.Lname, 
+    Sub.Name AS SubjectName, 
+    Mar.Marks,
+    Sub.Sem
+FROM 
+    Student S
+JOIN 
+    Student_marks Mar ON S.Id = Mar.Student_id
+JOIN 
+    Subject Sub ON Mar.Subject_id = Sub.Subject_id;
+
+
 DELETE FROM Student;
